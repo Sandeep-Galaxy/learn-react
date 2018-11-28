@@ -1,0 +1,36 @@
+{
+  "name": "learn-react",
+  "description": "Learn the basic concepts of React library.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/webpack-dev-server --progress",
+    "build": "node_modules/.bin/webpack -p --config ./webpack.production.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sandeep.pandey@github.com/Sandeep-Galaxy/learn-react.git"
+  },
+  "keywords": [
+    "learn",
+    "react",
+    "react"
+  ],
+  "author": "Sandeep",
+  "devDependencies": {
+    "babel-core": "^5.8.*",
+    "babel-loader": "^5.3.*",
+    "copy-webpack-plugin": "^4.6.0",
+    "webpack": "^1.12.*",
+    "webpack-dev-server": "^1.10.*"
+  },
+  "dependencies": {
+    "react": "^0.13.*"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sandeep-Galaxy/learn-react/issues"
+  },
+  "homepage": "https://github.com/Sandeep-Galaxy/learn-react#readme"
+}
