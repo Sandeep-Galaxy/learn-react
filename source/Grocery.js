@@ -12,7 +12,7 @@ export default class GroceryList extends Component {
                     <ListItem quantity="6" name="Eggs" />
                     <ListItem quantity="2" name="Milk" />
 
-                    <ListItemCh quantity="5">Banana</ListItemCh>
+                    <ListItemCh quantity="5">Banana {" "} F</ListItemCh>
                     <ListItemCh quantity="9">Apple</ListItemCh>
                     <ListItemCh quantity="7">Orange</ListItemCh>
                     </ul>
