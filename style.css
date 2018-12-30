@@ -691,3 +691,8 @@ body {
     background-color: transparent;
 }
 
+.float-button:hover{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
