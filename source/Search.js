@@ -16,7 +16,7 @@ class Search extends Component {
     render() {
         return (
                 <div>
-                    Search Term: <input type="checkbox" checked="true" /> <input type="search" onChange={this.handleChange.bind(this)} value={this.state.searchTerm} />
+                    Search Term: <input type="checkbox" defaultChecked={true} /> <input type="search" onChange={this.handleChange.bind(this)} value={this.state.searchTerm} />
                 </div>
                 )
     }

@@ -1,66 +1,68 @@
 import React, {Component} from 'react';
+import {render} from 'react-dom';
+import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 import Hello from './Hello.js';
 import GroceryList from './Grocery.js';
-import KanbanBoard from './KanbanBoard.js';
 import Search from './Search.js';
 
-let cardsList = [
-    {
-        id: 1,
-        title: "Read the Book",
-        description: "I should read the **whole** book",
-        status: "in-progress",
-        color: '#BD8D31',
-        tasks: []
-    },
-    {
-        id: 2,
-        title: "Write some code",
-        description: "Code along with the samples in the book. The complete source can be found\n\
-                      at [github](https://github.com/pro-react)",
-        status: "todo",
-        color: '#3A7E28',
-        tasks: [
-            {
-                id: 1,
-                name: "ContactList Example",
-                done: true
-            },
-            {
-                id: 2,
-                name: "Kanban Example",
-                done: false
-            },
-            {
-                id: 3,
-                name: "My own experiments",
-                done: false
-            }
-        ]
-    },
-    {
-        id: 1,
-        title: "This is a new card with a very, very long title, thus having \n\
-                more than 80 characters.",
-        description: "I should read the **whole** book",
-        status: "done",
-        color: '#BD8D31',
-        tasks: []
-    },
-];
+import KanbanBoardContainer from './Kanban/KanbanBoardContainer.js';
+import ContactsAppContainer from './Contact/ContactsAppContainer.js';
+import RoutingApp from './Routing/RoutingApp.js';
+import RoutingReact from './RoutingReact/RoutingReact.js';
+
+import MenuApp from './Menu/MenuApp.js';
+
+const web_routes = [
+                {
+                    to: '/',
+                    path: '/',
+                    component: Hello,
+                    menu_name: 'First'
+                },
+                {
+                    to: '/second',
+                    path: '/second',
+                    component: GroceryList,
+                    menu_name: 'Second'
+                },
+                {
+                    to: '/kanban',
+                    path: '/kanban',
+                    component: KanbanBoardContainer,
+                    menu_name: 'Kanban'
+                },
+                {
+                    to: '/contacts',
+                    path: '/contacts',
+                    component: ContactsAppContainer,
+                    menu_name: 'Contacts'
+                },
+                {
+                    to: '/routing/v1',
+                    path: '/routing/v1',
+                    component: RoutingApp,
+                    menu_name: 'Routing'
+                },
+                {
+                    to: '/routing/v2',
+                    path: '/routing/v2',
+                    component: RoutingReact,
+                    menu_name: 'Routing React'
+                }
+            ];
 
 class App extends Component {
     render() {
         return (
+                <Router>
                 <div>
-                    <Search/>
-                    <Hello/>
-                    <GroceryList/>
-                    <KanbanBoard cards={cardsList} />
+                    {/*<Search />*/}
+                    <MenuApp routes={web_routes} />
                 </div>
+                </Router>    
         );
     }
 }
 
-React.render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
