@@ -3,6 +3,21 @@ import {HashRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 class MenuApp extends Component {
     
+    toggleClassExists(){
+        var element = document.getElementsByClassName('page-wrapper');
+        return element[0].classList.contains('toggled');
+    }
+    
+    handleToggleSidebar(event){
+        var element = document.getElementsByClassName('page-wrapper')[0];
+        if(this.toggleClassExists()){
+            element.classList.remove('toggled');
+        }
+        else{
+            element.classList.add('toggled');
+        }
+    }
+    
     render() {
         
         let menuLinks = this.props.routes.map(($link, index) => {
@@ -33,14 +48,14 @@ class MenuApp extends Component {
     
         return (
              <div className="page-wrapper chiller-theme toggled">
-                <a id="show-sidebar" className="btn btn-sm btn-dark" href="#">
+                <a id="show-sidebar" onClick={this.handleToggleSidebar.bind(this)} className="btn btn-sm btn-dark" href="#">
                     <i className="fas fa-bars"></i>
                 </a>
                 <nav id="sidebar" className="sidebar-wrapper">
                     <div className="sidebar-content">
                         <div className="sidebar-brand">
                             <a href="#">React Components</a>
-                            <div id="close-sidebar">
+                            <div id="close-sidebar" onClick={this.handleToggleSidebar.bind(this)}>
                                 <i className="fas fa-times"></i>
                             </div>
                         </div>

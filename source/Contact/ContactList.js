@@ -11,13 +11,17 @@ class ContactList extends Component {
         );
 
         return(
-                <ul>
-                    {filteredContacts.map(
-                                        (contact) => <ContactItem key={contact.email}
-                                                     name={contact.name}
-                                                     email={contact.email} />
-                                )}
-                </ul>
+                <div className="row" style={{marginTop: 15+'px'}}>
+                    <div className="">
+                        <ul>
+                            {filteredContacts.map(
+                                                (contact) => <ContactItem key={contact.email}
+                                                             name={contact.name}
+                                                             email={contact.email} />
+                                        )}
+                        </ul>
+                    </div>
+                </div>
                 )
     }
 }
